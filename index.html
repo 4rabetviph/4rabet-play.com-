@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login Page</title>
+       <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css"
+  />
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"
+  ></script>
+  <link rel="stylesheet" href="styles.css" />
+  
+</head>
+<body>
+  <div class="login-container" id="loginModal">
+    <button class="close-btn" id="closeBtn">&times;</button>
+    <h2>LOGIN</h2>
+
+    <div class="tabs">
+      <div class="tab active" id="tab-email">
+        <img id="icon-email" src="email-active.png" alt="Email"> Email
+      </div>
+      <div class="tab" id="tab-phone">
+        <img id="icon-phone" src="phone-inactive.png" alt="Phone"> Phone
+      </div>
+    </div>
+
+    <form id="login-form">
+      <!-- Email input -->
+      <div class="input-group" id="group-email" style="display: flex;">
+        <input type="email" id="email" placeholder="E-mail" />
+        <div class="error-msg" id="email-error"></div>
+      </div>
+
+      <!-- Phone input -->
+      <div class="input-group" id="group-phone">
+        <div class="phone-unified">
+          <img src="https://flagcdn.com/w20/in.png" alt="flag" id="phone-flag">
+          <select id="country-code" onchange="phoneFlag.src=this.options[this.selectedIndex].dataset.flag">
+            <option value="+91" data-flag="https://flagcdn.com/w20/in.png">+91</option>
+            <option value="+1" data-flag="https://flagcdn.com/w20/us.png">+1</option>
+          </select>
+          <input type="tel" id="phone" placeholder="Phone number" />
+        </div>
+        <div class="error-msg" id="phone-error"></div>
+      </div>
+
+      <!-- Password input updated to match image layout -->
+      <div class="input-group password-group">
+        <div class="password-wrapper">
+          <input type="password" id="password" placeholder="Password" />
+          <button type="button" class="toggle-pw" id="toggle-pw">
+            <img id="icon-pw" src="eye-closed.png" alt="Toggle">
+          </button>
+        </div>
+        <div class="error-msg" id="password-error"></div>
+      </div>
+
+      <div class="recover">Don't remember? <a href="#">Recover a password</a></div>
+      <div class="footer-text">
+        <p>Don't have an account?</p>
+        <a href="#">Sign up</a>
+      </div>
+      <button type="submit" class="btn" id="loginBtn" disabled>SIGN IN</button>
+    </form>
+  </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
